@@ -1,0 +1,36 @@
+{{#if bool}}
+<h1>Новый щебет</h1>
+<form id="addForm">
+  <div class="mb-3">
+    <input type="text" required class="form-control" name="text" placeholder="post's text" >
+  </div>
+  <div class="mb-3">
+    <input type="file" required class="form-control" name="image" placeholder="image">
+  </div>
+  <div class="mb-3">
+  <button type="submit" class="btn btn-info">Прощебетать!</button>
+	</div>
+</form>
+<br>
+<br>
+<br>
+<h1>Мои щебеты</h1>
+<div id="postList" class="row">
+	{{#each posts}}
+	<div id='div-{{id}}' class="card" style="width: 18rem;" >
+			<img src="{{image}}" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">{{user_name}}</h5>
+				<p class="card-text">{{text}}</p>
+				<p class="card-text">{{date}}</p>
+				<span id='span-{{id}}' class="likes">❤️ {{likes}}</span>
+				<br>
+				<button data-delete={{id}} class="btn btn-info" type="click">Удалить!</button>
+				<button data-edit={{id}} class="btn btn-info" type="click">Изменить!</button>
+			</div>
+</div>
+{{/each}}
+</div>
+{{else}}
+<p>Для тебя тут ничего нет!</p>
+{{/if}}

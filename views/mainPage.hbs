@@ -1,0 +1,54 @@
+{{#if userId}}
+<form id="add1Form">
+  <div class="mb-3">
+    <input type="text" required class="form-control" name="text" placeholder="post's text" >
+  </div>
+  <div class="mb-3">
+    <input type="file" required class="form-control" name="image" placeholder="image">
+  </div>
+  <div class="mb-3">
+  <button type="submit" class="btn btn-info">Прощебетать!</button>
+	</div>
+</form>
+
+<br>
+<br>
+<br>
+
+<div id="postList" class="row">
+	{{#each posts}}
+	<div id='div-{{id}}' class="card" style="width: 18rem;" >
+				<img src="{{image}}" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">{{user_name}} щебечет:</h5>
+				<p class="card-text">{{text}}</p>
+				<p class="card-text">{{date}}</p>
+				<button data-like={{id}} class="btn btn-info" type="click">❤️</button>
+				<span id='span-{{id}}' class="likes">{{likes}}</span>
+				<br>
+			</div>
+</div>
+{{/each}}
+</div>
+{{else}}
+Чтобы отправить свой щебет, пожалуйста, зарегистрируйтесь!
+<br>
+<br>
+<br>
+<div id="postList" class="row">
+	<h2>Последние щебеты</h2>
+	{{#each posts}}
+	<div id='div-{{id}}' class="card" style="width: 18rem;" >
+			<img src="{{image}}" class="card-img-top" alt={{title}}>
+			<div class="card-body">
+				<h5 class="card-title">{{user_name}} щебечет:</h5>
+				<p class="card-text">{{text}}</p>
+				<p class="card-text">{{date}}</p>
+				<span id='span-{{id}}' class="likes">❤️ {{likes}}</span>
+				<br>
+			</div>
+</div>
+{{/each}}
+</div>
+{{/if}}
+

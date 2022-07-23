@@ -1,0 +1,17 @@
+
+#mess {
+	color : red
+}
+#mess2 {
+	color : red
+}
+body {
+	background: url('https://librvil.ru/wp-content/uploads/2021/01/1234567124.jpg');
+	margin: 10px;
+}
+img {
+	height: 150px;
+}
+#registerForm, #loginForm {
+	width: 50%;
+}
